@@ -152,14 +152,6 @@ function main() {
     return (brief ? [brief] : []).concat(results);
   }
 
-  var i=0
-  for (const w of words) {
-    if (strokeResults(w.split(''))[0].toLowerCase() !== w) {
-      console.log(w); i++
-      if (i==20) break
-    }
-  }
-
   function commit(s: string) {
     if (capitalizeNext || shiftStroke) s = capitalize(s);
     capitalizeNext = s === ".";
