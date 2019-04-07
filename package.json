@@ -1,0 +1,32 @@
+{
+  "name": "senot",
+  "version": "1.0.0",
+  "description": "a cutesy stenography theory that takes half an hour to learn!",
+  "main": "senot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node prebuild.js && echo hi && webpack --display verbose --mode development",
+    "build": "node prebuild.js && webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynn/senot.git"
+  },
+  "keywords": [],
+  "author": "Lynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lynn/senot/issues"
+  },
+  "homepage": "https://github.com/lynn/senot#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.3",
+    "speed-measure-webpack-plugin": "^1.3.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

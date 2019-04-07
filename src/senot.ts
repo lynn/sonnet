@@ -1,6 +1,6 @@
-declare const wordlist: string[];
+import wordlist from './wordlist'
 
-const briefs = {
+const briefs: { [key: string]: string } = {
   t: "the",
   o: "of",
   k: "and",
@@ -152,6 +152,14 @@ function main() {
     return (brief ? [brief] : []).concat(results);
   }
 
+  var i=0
+  for (const w of words) {
+    if (strokeResults(w.split(''))[0].toLowerCase() !== w) {
+      console.log(w); i++
+      if (i==20) break
+    }
+  }
+
   function commit(s: string) {
     if (capitalizeNext || shiftStroke) s = capitalize(s);
     capitalizeNext = s === ".";
@@ -226,7 +234,7 @@ function main() {
       document.getElementById("key-" + key).style.backgroundColor = "#f05";
       keySet.add(key);
       // Add it to the stroke.
-      if (!stroke.includes(key)) {
+      if (stroke.indexOf(key) < 0) {
         stroking = true;
         stroke.push(key);
       }
@@ -242,7 +250,7 @@ function main() {
       keySet.delete(key);
       updateKeyDisplay();
       if (keySet.size === 0) {
-        strokeTimeout = window.setTimeout(interpretStroke, 0);
+        strokeTimeout = window.setTimeout(interpretStroke, 5);
       }
     }
   }
