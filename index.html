@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>sonnet</title>
+  <script type="text/javascript" src="sonnet.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fdd;
+      background-color: #001;
+    }
+
+    div.display {
+      height: 30px;
+    }
+
+    span.stroke-head {
+      color: orange;
+    }
+
+    span.stroke-tail {
+      color: teal;
+    }
+
+    #results-display {
+      color: orange;
+    }
+
+    #wpm-display {
+      color: teal;
+    }
+
+    textarea {
+      width: 400px;
+      height: 100px;
+      background-color: navy;
+      color: white;
+    }
+
+    sup.ri {
+      opacity: 0.75;
+    }
+
+    /* Keyboard */
+    .keyboard {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .keyboard-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .key {
+      width: 30px;
+      height: 30px;
+      margin: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #444;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="pad"></textarea>
+  <div class="display" id="key-display"></div>
+  <div class="display" id="stroke-display">
+    <span id="stroke-head-display" class="stroke-head"></span>
+    <span id="stroke-tail-display" class="stroke-tail"></span>
+  </div>
+  <div class="display" id="results-display"></div>
+  <div class="display" id="wpm-display"></div>
+  <div class="keyboard">
+    <div class="keyboard-row">
+      <div class="key" id="key-`">`</div>
+      <div class="key" id="key-1">1</div>
+      <div class="key" id="key-2">2</div>
+      <div class="key" id="key-3">3</div>
+      <div class="key" id="key-4">4</div>
+      <div class="key" id="key-5">5</div>
+      <div class="key" id="key-6">6</div>
+      <div class="key" id="key-7">7</div>
+      <div class="key" id="key-8">8</div>
+      <div class="key" id="key-9">9</div>
+      <div class="key" id="key-0">0</div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key" id="key-tab" style="width:45px">tab</div>
+      <div class="key" id="key-q">q</div>
+      <div class="key" id="key-w">w</div>
+      <div class="key" id="key-e">e</div>
+      <div class="key" id="key-r">r</div>
+      <div class="key" id="key-t">t</div>
+      <div class="key" id="key-y">y</div>
+      <div class="key" id="key-u">u</div>
+      <div class="key" id="key-i">i</div>
+      <div class="key" id="key-o">o</div>
+      <div class="key" id="key-p">p</div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key" id="key-capslock" style="width:55px">caps</div>
+      <div class="key" id="key-a">a</div>
+      <div class="key" id="key-s">s</div>
+      <div class="key" id="key-d">d</div>
+      <div class="key" id="key-f">f</div>
+      <div class="key" id="key-g">g</div>
+      <div class="key" id="key-h">h</div>
+      <div class="key" id="key-j">j</div>
+      <div class="key" id="key-k">k</div>
+      <div class="key" id="key-l">l</div>
+      <div class="key" id="key-l">;</div>
+      <div class="key" id="key-l">'</div>
+    </div>
+    <div class="keyboard-row">
+      <div class="key" id="key-shift" style="width:70px">shift</div>
+      <div class="key" id="key-z">z</div>
+      <div class="key" id="key-x">x</div>
+      <div class="key" id="key-c">c</div>
+      <div class="key" id="key-v">v</div>
+      <div class="key" id="key-b">b</div>
+      <div class="key" id="key-n">n</div>
+      <div class="key" id="key-m">m</div>
+      <div class="key" id="key-,">,</div>
+      <div class="key" id="key-.">.</div>
+    </div>
+  </div>
+</body>
+
+</html>
