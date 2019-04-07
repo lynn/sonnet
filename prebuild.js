@@ -1,11 +1,12 @@
 var fs = require("fs");
-var request = require("request");
 
 console.log("Copying index.html into dist folder...");
+if (!fs.existsSync("dist")) fs.mkdirSync("dist");
 fs.copyFileSync("src/index.html", "dist/index.html");
 
 if (fs.existsSync("src/wordlist.js")) {
   console.log("wordlist.js already generated. That's good.");
+  console.log("You can delete all.num.o5 now, if you'd like.");
 } else {
   console.log("Generating wordlist.js...");
   if (!fs.existsSync("all.num.o5")) {
@@ -20,5 +21,5 @@ if (fs.existsSync("src/wordlist.js")) {
   console.log("Done.");
 }
 
-console.log("Okay, webpack time.");
+console.log("Okay, bundle time.");
 process.exit(0);
